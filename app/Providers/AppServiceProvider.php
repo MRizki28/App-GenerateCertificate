@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Interfaces\TemplateCertificateInterfaces;
+use App\Repositories\TemplateCertificateRepositories;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(TemplateCertificateInterfaces::class, TemplateCertificateRepositories::class);
     }
 
     /**
